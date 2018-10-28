@@ -1,53 +1,63 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 body{
 	min-height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: url('img/background.jpg')center/cover no-repeat;
 }
 
-.images{
-	background: yellow;
-	flex:0 0 80%;
-	min-height: 70vh;
-	background: url('img/bcg-0.jpg')center/cover no-repeat;
-	border-radius: 15px;
-	box-shadow: 5px 10px black;
-	position: relative;
+.calculator{
+	flex: 0 0 95%;
 }
 
-.btn{
-	display: inline-block;
-	background: white;
-	color: black;
-	border: 3px solid blue;
-	font-size: 1.5rem;
+.screen{
+	width: 100%;
+	font-size: 7rem;
 	padding: 0.5rem;
-	border-radius: 20%;
-	box-shadow: 2px 5px black;
-	outline: none;
+	background: rgb(41,41,56);
+	color: white;
+	border: none;
 }
 
-.prevBtn{
-	position: absolute;
-	top: 50%;
-	left: 0;
-	transform: translate(-50%);
+.buttons{
+	display: flex;
+	flex-wrap: wrap;
+	transition: all 0.5s linear;
 }
 
-.nextBtn{
-	position: absolute;
-	top: 50%;
-	right: 0;
-	transform: translate(50%);
+button{
+	flex: 0 0 25%;
+	border: 1px solid black;
+	padding: 0.25rem 0;
+	transition: all 2s ease;
 }
 
-.btn:active{
-	background: grey;
-	box-shadow: 1px 1px grey;
+button:hover{
+	background: blue;
 }
 
-.btn:hover{
-	background:blue;
-	color:white;
+.btn-yellow{
+	background: rgb(245,146, 62);
+	color: white;
+}
+
+.btn-grey{
+	background: rgb(224,224,224);
+}
+
+.btn, .btn-equal, .btn-clear{
+	font-size: 4rem;
+}
+
+.btn-equal{
+	background:green;
+}
+
+.btn-clear{
+	background:red;
 }

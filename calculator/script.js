@@ -1,26 +1,24 @@
-const nextBtn = document.querySelector('.nextBtn');
-const prevBtn = document.querySelector('.prevBtn');
-const container = document.querySelector('.images');
+const btns = document.querySelectorAll('.btn');
+const screen = document.querySelector('.screen');
+const equalBtn = document.querySelector('.btn-equal');
+const clearBtn = document.querySelector('.btn-clear');
 
-let counter = 0;
-
-nextBtn.addEventListener('click', nextSlide);
-prevBtn.addEventListener('click', prevSlide);
-
-function nextSlide (){
-	container.animate([{opacity:'0.1'},{opacity: '1.0'}],{duration:1000,fill:'forwards'})
-	if(counter===7){
-		counter = -1
-	}
-	counter++;
-	container.style.backgroundImage = `url(img/bcg-${counter}.jpg`
+for (let i = 0; i<btns.length; i++){
+	btns[i].addEventListener('click', function(){
+		let number = btns[i].getAttribute('data-num');
+		screen.value+= number
+	})
 }
 
-function prevSlide (){
-	container.animate([{opacity:'0.1'},{opacity: '1.0'}],{duration:1000,fill:'forwards'})
-	if(counter=== 0){
-		counter = 8
-	}
-	counter--;
-	container.style.backgroundImage = `url(img/bcg-${counter}.jpg`
+equalBtn.addEventListener('click',function() {
+	if (screen.value ===""){
+		alert ('input is empty');
+	} else {
+	let value = eval(screen.value);
+	screen.value = value;
 }
+})
+
+clearBtn.addEventListener('click', function(){
+	screen.value = "";
+})
